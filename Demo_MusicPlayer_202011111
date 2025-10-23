@@ -1,0 +1,49 @@
+public class Demo_MusicPlayer_202011111 {
+    public static void main(String[] args) {
+
+        MusicPlayer_202011111 playlist1 = new MusicPlayer_202011111();
+
+        System.out.println("---add---");
+        playlist1.addSong("ya lili", "balti");
+        playlist1.addSong("enta maaya", "tamer hosny");
+        playlist1.addSong("maktoub liya", "saad lamjarred");
+        playlist1.addSong("amma barawa", "nagaat el saghira");
+        playlist1.displayMusicPlaylist();
+
+        System.out.println("---search---");
+        String artist = playlist1.searchSong("amma barawa");
+        if (artist != null)
+            System.out.println("amma barawa by " + artist);
+        else
+            System.out.println("song not found");
+
+        System.out.println("---get by index---");
+        System.out.println("song at index 2: " + playlist1.get(2));
+
+        System.out.println("---remove---");
+        playlist1.removeSong("maktoub liya");
+        playlist1.displayMusicPlaylist();
+
+        System.out.println("---contains---");
+        System.out.println("contains 'enta maaya'? " + playlist1.contains("enta maaya"));
+        System.out.println("contains 'ya habibi'? " + playlist1.contains("ya habibi"));
+
+        System.out.println("---index---");
+        System.out.println("index of amma barawa: " + playlist1.indexOf("amma barawa"));
+
+        System.out.println("---size---");
+        System.out.println("playlist size: " + playlist1.size());
+
+        System.out.println("---compare two playlists---");
+        MusicPlayer_202011111 playlist2 = new MusicPlayer_202011111();
+        playlist2.addSong("ya lili", "balti");
+        playlist2.addSong("enta maaya", "tamer hosny");
+        playlist2.addSong("amma barawa", "nagaat el saghira");
+        System.out.println("playlist1 equals playlist2? " + playlist1.compare(playlist2));
+
+        System.out.println("---clear playlist---");
+        playlist1.clear();
+        playlist1.displayMusicPlaylist();
+        System.out.println("playlist size: " + playlist1.size());
+    }
+}
